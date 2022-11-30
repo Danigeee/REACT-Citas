@@ -15,9 +15,9 @@ const [error, setError] = useState(false)
     //validacion del formulario
     if([nombre,propietario,email,fecha,sintomas].includes("")){
       setError(true)
-    }else{
-      console.log("todob ein");
+      return
     }
+    setError(false)
   }
 
   return (
