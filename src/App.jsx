@@ -1,19 +1,27 @@
-import AppForm from "./components/AppForm"
-import Header from "./components/Header"
-import ListadoPacientes from "./components/ListadoPacientes"
-
+import { useState } from "react";
+import AppForm from "./components/AppForm";
+import Header from "./components/Header";
+import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
+  const [pacientes, setPacientes] = useState([]);
+const [paciente, setPaciente] = useState({})
+
   return (
     <div className="container mx-auto mt-20">
-    <Header />
-    <div className="mt-12 md:flex">
-
-    <AppForm />
-    <ListadoPacientes />
+      <Header />
+      <div className="mt-12 md:flex">
+        <AppForm 
+        pacientes={pacientes}
+        setPacientes = {setPacientes}
+        />
+        <ListadoPacientes 
+          pacientes = {pacientes}
+          setPaciente = {setPaciente}
+        />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
